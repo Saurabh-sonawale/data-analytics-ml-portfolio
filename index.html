@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Saurabh Sonawale | Data Analytics & Machine Learning Portfolio</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: #e5e7eb;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1150px;
+      margin: auto;
+    }
+
+    header {
+      padding: 22px 0;
+      border-bottom: 1px solid #1e293b;
+      position: sticky;
+      top: 0;
+      background: rgba(15, 23, 42, 0.95);
+      z-index: 100;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #38bdf8;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a {
+      color: #cbd5e1;
+    }
+
+    .nav-links a:hover {
+      color: #38bdf8;
+    }
+
+    .hero {
+      padding: 90px 0 70px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: #1e293b;
+      color: #38bdf8;
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 3.2rem;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .highlight {
+      color: #38bdf8;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: #cbd5e1;
+      max-width: 680px;
+      margin-bottom: 28px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      padding: 12px 18px;
+      border-radius: 10px;
+      font-weight: bold;
+      display: inline-block;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: #38bdf8;
+      color: #020617;
+    }
+
+    .btn-primary:hover {
+      background: #7dd3fc;
+    }
+
+    .btn-secondary {
+      border: 1px solid #334155;
+      color: #e5e7eb;
+    }
+
+    .btn-secondary:hover {
+      border-color: #38bdf8;
+      color: #38bdf8;
+    }
+
+    .profile-card {
+      background: #111827;
+      border: 1px solid #1e293b;
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+    }
+
+    .profile-card h3 {
+      margin-bottom: 14px;
+      color: #38bdf8;
+    }
+
+    .profile-card ul {
+      list-style: none;
+    }
+
+    .profile-card li {
+      padding: 8px 0;
+      color: #cbd5e1;
+      border-bottom: 1px solid #1e293b;
+    }
+
+    section {
+      padding: 70px 0;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 14px;
+    }
+
+    .section-subtitle {
+      color: #94a3b8;
+      margin-bottom: 35px;
+      max-width: 760px;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .project-card {
+      background: #111827;
+      border: 1px solid #1e293b;
+      border-radius: 18px;
+      padding: 24px;
+      transition: 0.2s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      border-color: #38bdf8;
+    }
+
+    .status {
+      display: inline-block;
+      font-size: 0.78rem;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: #1e293b;
+      color: #facc15;
+      margin-bottom: 14px;
+    }
+
+    .project-card h3 {
+      color: #f8fafc;
+      margin-bottom: 10px;
+      font-size: 1.25rem;
+    }
+
+    .project-card p {
+      color: #cbd5e1;
+      margin-bottom: 16px;
+    }
+
+    .tools {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 18px;
+    }
+
+    .tools span {
+      font-size: 0.78rem;
+      padding: 6px 9px;
+      border-radius: 8px;
+      background: #0f172a;
+      color: #93c5fd;
+      border: 1px solid #1e293b;
+    }
+
+    .project-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      font-size: 0.9rem;
+    }
+
+    .project-links a {
+      color: #38bdf8;
+      font-weight: bold;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .skill-box {
+      background: #111827;
+      border: 1px solid #1e293b;
+      border-radius: 16px;
+      padding: 22px;
+    }
+
+    .skill-box h3 {
+      color: #38bdf8;
+      margin-bottom: 12px;
+    }
+
+    .skill-box p {
+      color: #cbd5e1;
+    }
+
+    .contact-box {
+      background: #111827;
+      border: 1px solid #1e293b;
+      border-radius: 18px;
+      padding: 30px;
+      text-align: center;
+    }
+
+    footer {
+      padding: 30px 0;
+      border-top: 1px solid #1e293b;
+      text-align: center;
+      color: #94a3b8;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 850px) {
+      .hero-grid,
+      .projects-grid,
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 2.3rem;
+      }
+
+      nav {
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">Saurabh Sonawale</div>
+        <div class="nav-links">
+          <a href="#projects">Projects</a>
+          <a href="#skills">Skills</a>
+          <a href="#resume">Resume</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="badge">Data Analytics & Machine Learning Portfolio</span>
+          <h1>Turning raw data into <span class="highlight">business insights</span>.</h1>
+          <p>
+            I build analytics dashboards, SQL-driven reports, machine learning models,
+            and data products using SQL, Python, Power BI, and modern data tools.
+          </p>
+
+          <div class="buttons">
+            <a href="#projects" class="btn btn-primary">View Projects</a>
+            <a href="resume.pdf" class="btn btn-secondary" target="_blank">Download Resume</a>
+            <a href="https://github.com/Saurabh-sonawale" class="btn btn-secondary" target="_blank">GitHub</a>
+            <a href="https://www.linkedin.com/in/saurabh-sonawale" class="btn btn-secondary" target="_blank">LinkedIn</a>
+          </div>
+        </div>
+
+        <div class="profile-card">
+          <h3>Portfolio Focus</h3>
+          <ul>
+            <li>SQL-based business analysis</li>
+            <li>Power BI dashboards</li>
+            <li>Python data cleaning & modeling</li>
+            <li>Machine learning case studies</li>
+            <li>End-to-end analytics storytelling</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <h2 class="section-title">Featured Projects</h2>
+        <p class="section-subtitle">
+          These projects are designed to showcase business analytics, dashboarding,
+          machine learning, and data engineering skills for analyst and data science roles.
+        </p>
+
+        <div class="projects-grid">
+          <div class="project-card">
+            <span class="status">Phase 2 — In Progress</span>
+            <h3>Retail & Food Services Sales Analytics Dashboard</h3>
+            <p>
+              Analyzed transaction-level sales data to identify revenue trends,
+              top-performing products, customer segments, and growth opportunities.
+            </p>
+            <div class="tools">
+              <span>SQL</span>
+              <span>Python</span>
+              <span>Power BI</span>
+              <span>DAX</span>
+            </div>
+            <div class="project-links">
+              <a href="#">Case Study</a>
+              <a href="#">GitHub Repo</a>
+              <a href="#">Dashboard</a>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <span class="status">Phase 3 — Planned</span>
+            <h3>Marketing Campaign Performance Dashboard</h3>
+            <p>
+              Built a campaign analytics dashboard to track spend, clicks,
+              conversions, ROAS, channel performance, and optimization opportunities.
+            </p>
+            <div class="tools">
+              <span>SQL</span>
+              <span>Power BI</span>
+              <span>Python</span>
+              <span>Excel</span>
+            </div>
+            <div class="project-links">
+              <a href="#">Case Study</a>
+              <a href="#">GitHub Repo</a>
+              <a href="#">Dashboard</a>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <span class="status">Phase 4 — Planned</span>
+            <h3>Customer Churn Prediction & Retention Dashboard</h3>
+            <p>
+              Developed a machine learning workflow to predict customer churn,
+              identify churn drivers, and recommend retention strategies.
+            </p>
+            <div class="tools">
+              <span>Python</span>
+              <span>SQL</span>
+              <span>scikit-learn</span>
+              <span>Power BI</span>
+            </div>
+            <div class="project-links">
+              <a href="#">Case Study</a>
+              <a href="#">GitHub Repo</a>
+              <a href="#">Dashboard</a>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <span class="status">Phase 5 — Planned</span>
+            <h3>Real-Time Energy Price Forecasting Pipeline</h3>
+            <p>
+              Designed an end-to-end pipeline for energy data ingestion, time-series
+              forecasting, model monitoring, and interactive analytics.
+            </p>
+            <div class="tools">
+              <span>Python</span>
+              <span>APIs</span>
+              <span>Streamlit</span>
+              <span>MLflow</span>
+              <span>Docker</span>
+            </div>
+            <div class="project-links">
+              <a href="#">Case Study</a>
+              <a href="#">GitHub Repo</a>
+              <a href="#">Live App</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <h2 class="section-title">Technical Skills</h2>
+        <p class="section-subtitle">
+          Core tools and technologies used across analytics, BI, machine learning, and data projects.
+        </p>
+
+        <div class="skills-grid">
+          <div class="skill-box">
+            <h3>Analytics & BI</h3>
+            <p>SQL, Power BI, Excel, Tableau, DAX, KPI reporting, dashboard design</p>
+          </div>
+
+          <div class="skill-box">
+            <h3>Python & ML</h3>
+            <p>Python, Pandas, NumPy, scikit-learn, feature engineering, model evaluation</p>
+          </div>
+
+          <div class="skill-box">
+            <h3>Data Engineering</h3>
+            <p>APIs, ETL pipelines, data cleaning, Docker, Streamlit, FastAPI, MLflow</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="resume">
+      <div class="container">
+        <h2 class="section-title">Resume</h2>
+        <p class="section-subtitle">
+          My resume will be added here as a downloadable PDF after the portfolio skeleton is complete.
+        </p>
+        <a href="resume.pdf" class="btn btn-primary" target="_blank">Download Resume</a>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="contact-box">
+          <h2 class="section-title">Contact</h2>
+          <p class="section-subtitle">
+            I am open to Data Analyst, BI Analyst, and Data Scientist opportunities.
+          </p>
+          <div class="buttons" style="justify-content: center;">
+            <a href="mailto:your-email@example.com" class="btn btn-primary">Email Me</a>
+            <a href="https://github.com/Saurabh-sonawale" class="btn btn-secondary" target="_blank">GitHub</a>
+            <a href="https://www.linkedin.com/in/saurabh-sonawale" class="btn btn-secondary" target="_blank">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      © 2026 Saurabh Sonawale. Data Analytics & Machine Learning Portfolio.
+    </div>
+  </footer>
+</body>
+</html>
